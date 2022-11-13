@@ -36,14 +36,5 @@ public class DateHalper {
         return battleTime.format((date2 -date1);
 
 
-    }
-
-    public Date getStartDate() {
-        calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.add(Calendar.YEAR, -1500);
-        startDate = calendar.getTime();
-        return startDate;
-    }
-
+    } 
 }
