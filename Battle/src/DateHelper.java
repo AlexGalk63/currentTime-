@@ -1,6 +1,3 @@
-package basket;
-
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,7 +10,7 @@ public class DateHalper {
     Date startDate;
     Calendar calendar;
 
-    public DateHalper() {
+    public DateHalper(Date startDate, Calendar calendar) {
         calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.add(Calendar.YEAR, -1500);
@@ -25,16 +22,22 @@ public class DateHalper {
         return startDateFormat.format(calendar.getTime());
     }
     public void skipTime() {
-        calendar.add(Calendar.MINUTE, 45);
+        calendar.add(Calendar.MILLISECOND, 2700000);
     }
 
 
-    public String getFormattedDiff() throws ParseException {
-        Date date1 = startDateFormat.parse(getFormattedStartDate());
+    public String getFormattedDiff(){
+        Date date1 = startDate;
         Date date2 = calendar.getTime();
 
         return battleTime.format((date2 -date1);
 
 
-    } 
+    }
+    public String currentDate(){
+        for () {
+
+        }
+    }
+
 }

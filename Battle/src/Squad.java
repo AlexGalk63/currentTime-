@@ -1,5 +1,3 @@
-package model;
-
 import java.util.Random;
 
 public class Squad {
@@ -8,10 +6,16 @@ public class Squad {
     WarriorService warriorService = new WarriorService();
     private Random random = new Random();
 
-    public Squad(String pepers, Warrior warrior) {};
-    public Squad(String squadname) {};
-    private String squadname;
+    public Squad(String pepers, Warrior warrior) {
+    }
 
+    ;
+
+    public Squad(String squadname) {
+    }
+
+    ;
+    private String squadname;
 
 
     public String getSquadName() {
@@ -59,34 +63,9 @@ public class Squad {
             if (squad.getWarriors()[i].isAlive())
                 System.out.println("В этом отряде есть живые бойцы");
             else {
-
                 System.out.println("В этом отряде все мертвы");
             }
         return false;
     }
-
-
-
-
-
-        //        System.out.println(Arrays.toString(squad.generateSquad().getWarriors()));
-
-//    public void goin(Room room) {
-//        if (room.getPersons().length > 0) {
-//            for (int i = 0; i < room.getPersons().length; i++) {
-//                if (!room.getPersons()[i].isAtHome()) {
-//                    if (room.getPersons()[i].getAge() > 25) {
-//                        Person person = room.getPersons()[i];
-//                        person.setAtHome(true);
-//                        System.out.println(person.getName() + " Пришёл с работы.");
-//                        return;
-        @Override
-        public Object clone () {
-            return new Squad(squadName, warriors.clone());
-        }
-        @Override
-        public String toString () {
-            return "Squad [name =" + squadName + " ]";
-        }
-    }
+}
 

@@ -1,8 +1,7 @@
-package model;
-
 import java.util.Arrays;
 
 public class Battle {
+
     public static void main(String[] args) {
         WarriorService warriorService = new WarriorService();
 //        Warrior wik = new Archer(WarriorService.getName());
@@ -61,7 +60,7 @@ class Viking implements Warrior{
 
     @Override
     public void setSquadName(String name) {
-    name = squadName;
+        name = squadName;
     }
     @Override
     public Object clone() {
@@ -97,7 +96,7 @@ class Archer implements Warrior{
     @Override
     public boolean isAlive() {
         if (archerHealth > 0)
-        return alive;
+            return alive;
         else if (archerHealth < 0)
             System.out.println("Боец мёртв");
         return false;
@@ -108,7 +107,7 @@ class Archer implements Warrior{
         this.squadName = squadName;
     }
 
-        @Override
+    @Override
     public Object clone() {
         return new Archer(WarriorService.getName());
     }
@@ -117,27 +116,4 @@ class Archer implements Warrior{
         return "Warrior [name =" + WarriorService.getName() + ", squadName =" + Squad.squadName + ", тип воина = Лучник]"+ "\n";
     }
 }
-
-
-
-
-//        public boolean hasAliveWarriors () {
-//            return false;
-//        }
-//    }
-//}
-
-
-
-
-
-//    public void delivery(Room room) {
-//        if (room.getPersons().length > 0) {
-//            for (int i = 0; i < room.getPersons().length; i++) {
-//                if (room.getPersons()[i].isAtHome()) {
-//                    if (room.getPersons()[i].getAge() > 14) {
-//                        System.out.println("Посылка доставлена " + room.getPersons()[i].getName());
-//                        return;
-//
-
 
