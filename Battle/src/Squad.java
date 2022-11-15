@@ -2,20 +2,9 @@ import java.util.Random;
 
 public class Squad {
     public static String squadName;
-    Warrior warrior = new WarriorService().generateWarrior();
     WarriorService warriorService = new WarriorService();
+    Warrior warrior = new WarriorService().generateWarrior();
     private Random random = new Random();
-
-    public Squad(String pepers, Warrior warrior) {
-    }
-
-    ;
-
-    public Squad(String squadname) {
-    }
-
-    ;
-    private String squadname;
 
 
     public String getSquadName() {
@@ -49,23 +38,26 @@ public class Squad {
         return new Squad(squadName, warriors1);
     }
 
-    public Warrior getRandomWarrior(Squad squad) {
+    public Warrior getRandomWarrior() {
         for (int i = 0; i < getWarriors().length; i++) {
-            if (getWarriors()[i].isAlive())
-                return warriors[i];
-            else i++;
-        }
-        return getRandomWarrior(squad);
-    }
-
-    public boolean hasAliveWarriors(Squad squad) {
-        for (int i = 0; i < squad.getWarriors().length; i++)
-            if (squad.getWarriors()[i].isAlive())
-                System.out.println("В этом отряде есть живые бойцы");
-            else {
-                System.out.println("В этом отряде все мертвы");
+            if (getWarriors()[i].isAlive()){
+                int warriorcount = random.nextInt(2);
+                return warriors[warriorcount];
             }
-        return false;
+
+        }
+
+        public boolean hasAliveWarriors() {
+            for (int i = 0; i < getWarriors().length; i++)
+                if (getWarriors()[i].isAlive())
+                    return warriors[i];
+                else {
+                    System.out.println("Все мертвы");
+                }
+
+        }
     }
 }
+
+
 

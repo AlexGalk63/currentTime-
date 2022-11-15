@@ -7,12 +7,12 @@ public class WarriorService {
     private static final String[] warriorNames = {"Karl", "Magnus", "Don"};
 
     private Warrior generateViking() {
-        return new Viking(getName());
+        return new Viking(getName(),100, Squad.squadName);
     }
 
 
     private Warrior generateArcher() {
-        return new Archer(getName());
+        return new Archer(getName(),80, Squad.squadName);
 
     }
 
