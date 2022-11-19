@@ -40,22 +40,22 @@ public class Squad {
 
     public Warrior getRandomWarrior() {
         for (int i = 0; i < getWarriors().length; i++) {
-            if (getWarriors()[i].isAlive()){
+            if (getWarriors()[i].isAlive()) {
                 int warriorcount = random.nextInt(2);
                 return warriors[warriorcount];
             }
-
         }
+        return null;
+    }
 
-        public boolean hasAliveWarriors() {
-            for (int i = 0; i < getWarriors().length; i++)
-                if (getWarriors()[i].isAlive())
-                    return warriors[i];
-                else {
-                    System.out.println("Все мертвы");
-                }
-
-        }
+    public boolean hasAliveWarriors() {
+        for (int i = 0; i < getWarriors().length; i++)
+            if (getWarriors()[i].isAlive())
+                return warriors[i].isAlive();
+            else {
+                System.out.println("Все мертвы");
+            }
+        return true;
     }
 }
 
