@@ -5,12 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 
 public class DateHelper {
-    private SimpleDateFormat currentDateFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm");
-    private SimpleDateFormat battleDateFormat = new SimpleDateFormat("mmmm");
-    private Date startDate;
-    private Calendar calendar;
+    SimpleDateFormat currentDateFormat;
+    Date startDate;
+    Calendar calendar;
 
     public DateHelper() {
+        currentDateFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm");
         calendar = Calendar.getInstance();
         calendar.add(Calendar.YEAR, -1500);
         startDate = new Date(calendar.getTimeInMillis());
