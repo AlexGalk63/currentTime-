@@ -18,7 +18,6 @@ public class WarriorService {
 
     public Warrior generateWarrior() {
         return new WarriorService().getType();
-
     }
 
     private Warrior getType() {

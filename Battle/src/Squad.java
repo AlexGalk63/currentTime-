@@ -1,11 +1,9 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Squad {
     public static String squadName;
     WarriorService warriorService = new WarriorService();
-    Warrior warrior = new WarriorService().generateWarrior();
-    private Random random = new Random();
-
 
     public String getSquadName() {
         return squadName;
@@ -26,34 +24,42 @@ public class Squad {
     }
 
 
-    public Squad(String squadName, Warrior[] warriors) {
+    public Squad(String squadName) {
         this.squadName = squadName;
-        this.warriors = warriors;
+        int squadCount = new Random().nextInt(7, 10);
+        warriors = new Warrior[squadCount];
     }
 
-    public Squad generateSquad() {
-        int squadcount = random.nextInt(7, 10);
-        Warrior[] warriors1 = new Warrior[squadcount];
-        for (int i = 0; i < warriors1.length; i++) warriors1[i] = warriorService.generateWarrior();
-        return new Squad(squadName, warriors1);
+    public void generateSquad() {
+        for (int i = 0; i < warriors.length; i++)
+            warriors[i] = warriorService.generateWarrior();
     }
 
     public Warrior getRandomWarrior() {
-        for (int i = 0; i < getWarriors().length; i++) {
-            if (getWarriors()[i].isAlive()) {
-                int warriorcount = random.nextInt(2);
-                return warriors[warriorcount];
+        //нужно найти список живых бойцов
+        ArrayList<Warrior> aliveWarriors = new ArrayList<>();
+
+        //формируем списко живых бойцов
+        for (int i = 0; i < warriors.length; i++) {
+            if (warriors[i].isAlive()) {
+                aliveWarriors.add(warriors[i]);
             }
+        }
+
+        //возвращаем случайного живого бойца из списка живых
+        if (aliveWarriors.size() > 0) {
+            int rnd = new Random().nextInt(0, aliveWarriors.size() - 1);
+            return aliveWarriors.get(rnd);
         }
         return null;
     }
 
     public boolean hasAliveWarriors() {
         for (int i = 0; i < getWarriors().length; i++)
-            if (getWarriors()[i].isAlive())
+            if (warriors[i].isAlive())
                 return warriors[i].isAlive();
             else {
-                System.out.println("Все мертвы");
+                return false;
             }
         return true;
     }

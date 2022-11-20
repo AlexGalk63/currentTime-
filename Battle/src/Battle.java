@@ -12,9 +12,6 @@ interface Warrior{
     default boolean isAlive(){return alive;};
     void setSquadName(String name);
     Object clone();
-
-
-
 }
 class Viking implements Warrior{
     private String name;
@@ -88,7 +85,7 @@ class Archer implements Warrior{
     public boolean isAlive() {
         if (archerHealth > 0)
             return alive;
-        else if (archerHealth < 0)
+        else if (archerHealth <= 0)
             System.out.println("Боец мёртв");
         return false;
     }

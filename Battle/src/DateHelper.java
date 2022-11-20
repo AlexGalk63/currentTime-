@@ -1,7 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 
 public class DateHelper {
@@ -21,12 +20,13 @@ public class DateHelper {
     }
 
     public void skipTime() {
+        //скип на 15 минут
         calendar.add(Calendar.MILLISECOND, 900000);
     }
 
     public String getFormattedDiff() {
         long diff = calendar.getTimeInMillis() - startDate.getTime();
-        return Long.toString(TimeUnit.MILLISECONDS.toMinutes(diff));
+        return Long.toString(diff/ 60000);
     }
 
     public String getFormattedCurrentDate() {

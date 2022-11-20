@@ -29,5 +29,15 @@ public class Main {
 
         System.out.println("after skip");
         System.out.printf("Diff: %s%n", helper.getFormattedDiff());
+
+        Squad squad = new Squad("1 squard");
+        squad.generateSquad();
+        Warrior firstWarrior = squad.getRandomWarrior();
+        System.out.printf("Name First Warrior: %s%n", firstWarrior.toString());
+        firstWarrior.takeDamage(100);
+
+        Warrior secondWarrior = squad.getRandomWarrior();
+        System.out.printf("Name First Warrior: %s%n", secondWarrior.toString());
+
     }
 }
